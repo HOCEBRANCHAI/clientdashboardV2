@@ -1,0 +1,436 @@
+/* Modal Overlay */
+.doc-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  background: rgba(10,10,42,0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Modal Box */
+.doc-modal {
+  width: 100vw;
+  height: 100vh;
+  max-width: none;
+  max-height: none;
+  border-radius: 0;
+  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.doc-modal-header {
+  position: sticky;
+  top: 0;
+  background: #18143a;
+  z-index: 10;
+  padding: 2.5rem 3rem 1.5rem 3rem;
+  border-bottom: 1.5px solid #2e2f50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.doc-modal-title {
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.doc-modal-close {
+  background: none;
+  border: none;
+  color: #FF4D80;
+  font-size: 2rem;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0 0.2rem;
+  transition: color 0.2s;
+}
+.doc-modal-close:hover {
+  color: #FF6699;
+}
+
+/* Stepper */
+.doc-modal-stepper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2.2rem;
+  gap: 0.5rem;
+}
+.step {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #18143a;
+  border: 2.5px solid #FF4D80;
+  color: #FF4D80;
+  font-weight: 700;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  transition: border 0.2s, color 0.2s;
+}
+.step.active {
+  background: #FF4D80;
+  color: #fff;
+  border-color: #FF4D80;
+}
+.step-label {
+  font-size: 1.05rem;
+  color: #9CA3AF;
+  margin: 0 0.3rem 0 0.3rem;
+  font-weight: 500;
+}
+.step-label.active {
+  color: #fff;
+  font-weight: 700;
+}
+.step-line {
+  flex: 1 1 0;
+  height: 3px;
+  background: linear-gradient(90deg, #FF4D80 0%, #FF6699 100%);
+  border-radius: 2px;
+  margin: 0 0.2rem;
+}
+
+/* Modal Content */
+.doc-modal-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 2rem 3rem 2.5rem 3rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.doc-modal-question {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 0.2rem;
+}
+
+.doc-modal-cards-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2.5rem;
+  flex-wrap: wrap;
+  max-width: 600px;
+}
+.doc-modal-card {
+  background: #18143a;
+  border: 2.5px solid #29255a;
+  border-radius: 16px;
+  padding: 1.2rem 1.1rem 1rem 1.1rem;
+  min-width: 210px;
+  max-width: 340px;
+  flex: 1 1 0;
+  cursor: pointer;
+  transition: border 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 12px #FF4D8033;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+.doc-modal-card.selected {
+  border: 2.5px solid #FF4D80;
+  box-shadow: 0 4px 24px #FF4D8044;
+}
+.doc-modal-card-title {
+  font-size: 1.08rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.2rem;
+}
+.doc-modal-card-desc {
+  font-size: 0.98rem;
+  color: #D1D5DB;
+  margin-bottom: 0.5rem;
+}
+.doc-modal-card-count {
+  font-size: 0.95rem;
+  color: #FF4D80;
+  font-weight: 600;
+}
+
+/* Document Requirements List */
+.doc-modal-req-list {
+  background: #151233;
+  border-radius: 12px;
+  padding: 1.2rem 1.2rem 1rem 1.2rem;
+  margin-top: 0.5rem;
+}
+.doc-modal-req-title {
+  font-size: 1.08rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.7rem;
+}
+.doc-modal-req-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+  margin-bottom: 0.7rem;
+}
+.doc-modal-req-dot {
+  font-size: 1.1rem;
+  color: #FF4D80;
+  margin-top: 0.2rem;
+}
+.doc-modal-req-name {
+  font-size: 1.01rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 0.1rem;
+}
+.doc-modal-req-star {
+  color: #FF4D80;
+  font-size: 1.1em;
+  margin-left: 0.1em;
+}
+.doc-modal-req-desc {
+  font-size: 0.97rem;
+  color: #D1D5DB;
+  margin-bottom: 0.1rem;
+}
+.doc-modal-req-formats {
+  font-size: 0.93rem;
+  color: #9CA3AF;
+}
+
+/* Modal Footer */
+.doc-modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+.doc-modal-cancel {
+  background: none;
+  border: 2px solid #29255a;
+  color: #fff;
+  border-radius: 8px;
+  padding: 0.6rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border 0.2s, color 0.2s, background 0.2s;
+}
+.doc-modal-cancel:hover {
+  border-color: #FF4D80;
+  color: #FF4D80;
+  background: #18143a;
+}
+.doc-modal-continue {
+  background: linear-gradient(90deg, #FF4D80 0%, #FF6699 100%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.7rem 2.2rem;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 2px 12px #FF4D8033;
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+.doc-modal-continue:hover {
+  background: linear-gradient(90deg, #FF6699 0%, #FF4D80 100%);
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 8px 32px #FF6699aa;
+}
+
+.doc-modal-flex-row {
+  display: flex;
+  flex-direction: row;
+  gap: 2.5rem;
+  align-items: flex-start;
+  width: 100%;
+  justify-content: center;
+}
+
+.doc-modal-option-box {
+  background: #18143a;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(255,77,128,0.10);
+  padding: 28px 24px;
+  min-width: 280px;
+  max-width: 340px;
+  flex: 1 1 320px;
+  margin-right: 0;
+}
+
+.doc-modal-userflow-box {
+  background: #1a1b36;
+  border: 1.5px solid #2e2f50;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(255,77,128,0.10);
+  padding: 28px 24px;
+  min-width: 280px;
+  max-width: 340px;
+  flex: 1 1 320px;
+  color: #fff;
+  height: fit-content;
+}
+
+.doc-modal {
+  max-width: 1100px;
+  margin: auto;
+}
+
+.doc-modal-header {
+  max-width: 1100px;
+  margin: 0 auto 1.5rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.doc-modal-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.doc-modal-flex-row {
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+  align-items: flex-start;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.doc-modal-divider {
+  flex: 0 0 1.5px;
+  width: 1.5px;
+  background: #2e2f50;
+  height: 80%;
+  align-self: center;
+  margin: 0;
+  box-shadow: 0 0 8px #0002;
+}
+
+.doc-modal-option-box, .doc-modal-userflow-box {
+  width: 50%;
+  min-width: 0;
+  max-width: none;
+  flex: 1 1 0;
+  height: 100%;
+  box-sizing: border-box;
+  border-radius: 18px;
+  padding: 36px 28px;
+  margin: 2rem 0;
+  background: #19183a;
+  box-shadow: 0 4px 32px rgba(10,10,42,0.10);
+}
+
+.doc-modal-userflow-box {
+  word-break: break-word;
+}
+
+.doc-modal-header {
+  margin-bottom: 2.5rem;
+}
+
+.doc-modal-userflow-box ol {
+  margin-bottom: 1.2rem;
+  line-height: 1.7;
+}
+
+.doc-file-upload-row {
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 1rem;
+}
+
+.doc-file-upload-row input[type="file"] {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 900px) {
+  .doc-modal-header {
+    padding: 1.5rem 1rem 1rem 1rem;
+  }
+  .doc-modal-content {
+    padding: 1.5rem 1rem 1.5rem 1rem;
+  }
+  .doc-modal-flex-row {
+    flex-direction: column;
+    gap: 0;
+    align-items: stretch;
+  }
+  .doc-modal-divider {
+    display: none;
+  }
+  .doc-modal-option-box, .doc-modal-userflow-box {
+    width: 100%;
+    min-width: 0;
+    max-width: none;
+    border-radius: 0 0 18px 18px;
+    padding: 24px 8px;
+    height: auto;
+    margin: 1.2rem 0;
+  }
+  .doc-modal-header {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 700px) {
+  .doc-modal {
+    padding: 1.1rem 0.5rem 0.7rem 0.5rem;
+    width: 99vw;
+    min-width: 0;
+  }
+  .doc-modal-stepper {
+    flex-direction: column;
+    gap: 0.2rem;
+    align-items: flex-start;
+  }
+  .doc-modal-cards-row {
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+  .doc-modal-req-list {
+    padding: 0.7rem 0.5rem 0.5rem 0.5rem;
+  }
+  .doc-modal-footer {
+    flex-direction: column;
+    gap: 0.7rem;
+    align-items: stretch;
+  }
+}
+
+/* Custom Scrollbar for Modal */
+.doc-modal, .doc-modal-overlay {
+  scrollbar-width: thin;
+  scrollbar-color: #1A1A4A #18143a;
+}
+
+.doc-modal::-webkit-scrollbar, .doc-modal-overlay::-webkit-scrollbar {
+  width: 8px;
+  background: #18143a;
+}
+.doc-modal::-webkit-scrollbar-thumb, .doc-modal-overlay::-webkit-scrollbar-thumb {
+  background: #1A1A4A;
+  border-radius: 8px;
+}
+.doc-modal::-webkit-scrollbar-thumb:hover, .doc-modal-overlay::-webkit-scrollbar-thumb:hover {
+  background: #12123A;
+}

@@ -1,0 +1,339 @@
+.discover-page {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.discover-intro {
+  background: linear-gradient(135deg, #2a204a 0%, #32275a 100%);
+  padding: 56px 40px 40px 40px;
+  border-radius: 0 0 32px 32px;
+  color: #fff;
+  text-align: left;
+}
+
+.discover-intro h1 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin-bottom: 16px;
+  letter-spacing: -1px;
+}
+
+.discover-intro p {
+  font-size: 1.25rem;
+  color: #d1cbe9;
+  margin: 0;
+  font-weight: 400;
+}
+
+.discover-updates {
+  background: #18143a;
+  padding: 48px 0 0 0;
+}
+
+.discover-updates h2 {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 36px;
+  margin-left: 40px;
+}
+
+.discover-updates-list {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  padding: 0 40px 0 40px;
+}
+
+.discover-update-card {
+  background: #231e3a;
+  border-radius: 20px;
+  padding: 32px 24px 24px 24px;
+  min-width: 260px;
+  max-width: 340px;
+  flex: 1 1 300px;
+  color: #fff;
+  box-shadow: 0 4px 24px 0 rgba(50, 39, 90, 0.12);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 24px;
+  transition: box-shadow 0.2s;
+}
+
+.discover-update-card:hover {
+  box-shadow: 0 8px 32px 0 rgba(255, 75, 139, 0.18);
+}
+
+.discover-update-icon {
+  font-size: 2.2rem;
+  margin-bottom: 14px;
+}
+
+.discover-update-badge {
+  display: inline-block;
+  background: #6c63ff;
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 700;
+  border-radius: 12px;
+  padding: 4px 16px;
+  margin-bottom: 14px;
+  letter-spacing: 0.5px;
+}
+
+.badge-newfeature { background: #ff4b8b; }
+.badge-update { background: #6c63ff; }
+.badge-feature { background: #4a86e8; }
+
+.discover-update-card h3 {
+  font-size: 1.18rem;
+  font-weight: 700;
+  margin: 0 0 10px 0;
+}
+
+.discover-update-card p {
+  color: #d1cbe9;
+  font-size: 1.05rem;
+  margin-bottom: 18px;
+}
+
+.discover-update-date {
+  color: #b3aee6;
+  font-size: 0.98rem;
+  margin-top: auto;
+}
+
+@media (max-width: 900px) {
+  .discover-updates-list {
+    flex-direction: column;
+    gap: 18px;
+    padding: 0 12px;
+  }
+  .discover-update-card {
+    max-width: 100%;
+    min-width: 0;
+  }
+  .discover-updates h2 {
+    margin-left: 12px;
+  }
+  .discover-intro {
+    padding: 36px 12px 24px 12px;
+  }
+}
+
+.discover-tabs {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 32px;
+  justify-content: center;
+}
+
+.discover-tabs button {
+  background: none;
+  border: none;
+  color: #ff4b8b;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 12px 28px;
+  border-radius: 24px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.discover-tabs button.active {
+  background: #ff4b8b;
+  color: #fff;
+}
+
+.discover-section-content > section {
+  margin-bottom: 40px;
+}
+
+.blog-list, .video-list, .library-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.blog-card, .video-card, .library-card {
+  background: #23204a;
+  color: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  min-width: 250px;
+  flex: 1 1 300px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+
+.blog-meta, .video-meta {
+  color: #ff4b8b;
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+}
+
+@media (max-width: 900px) {
+  .discover-page { padding: 8px; }
+  .blog-list, .video-list, .library-list { flex-direction: column; gap: 16px; }
+}
+
+.section-title {
+    
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 24px;
+  margin-left: 0;
+}
+
+.discover-articles-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+  margin-bottom: 32px;
+}
+
+.discover-article-card {
+  background: #231e3a;
+  border-radius: 18px;
+  box-shadow: 0 2px 8px rgba(50, 39, 90, 0.12);
+  overflow: hidden;
+  cursor: pointer;
+  min-width: 320px;
+  max-width: 420px;
+  flex: 1 1 380px;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.2s;
+}
+
+.discover-article-card:hover {
+  box-shadow: 0 8px 32px 0 rgba(255, 75, 139, 0.18);
+}
+
+.discover-article-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.discover-article-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.discover-article-meta {
+  color: #b3aee6;
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+
+.discover-article-title {
+  color: #fff;
+  font-size: 1.18rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.see-more-container {
+  text-align: center;
+  margin-top: 16px;
+}
+
+.see-more-btn {
+  background: #ff4b8b;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 28px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.see-more-btn:hover {
+  background: #e13c7a;
+}
+
+.discover-videos-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+}
+
+.discover-video-card {
+  background: #231e3a;
+  border-radius: 18px;
+  box-shadow: 0 2px 8px rgba(50, 39, 90, 0.12);
+  overflow: hidden;
+  min-width: 320px;
+  max-width: 420px;
+  flex: 1 1 380px;
+  display: flex;
+  flex-direction: column;
+}
+
+.discover-video-thumb {
+  position: relative;
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+}
+
+.discover-video-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(0.2);
+}
+
+.discover-video-play {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2.5rem;
+  color: #fff;
+  background: rgba(255, 75, 139, 0.8);
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.discover-video-info {
+  padding: 20px;
+}
+
+.discover-video-info h3 {
+  color: #fff;
+  font-size: 1.18rem;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+}
+
+.discover-video-meta {
+  color: #b3aee6;
+  font-size: 1rem;
+  display: flex;
+  gap: 16px;
+}
+
+@media (max-width: 900px) {
+  .discover-articles-list,
+  .discover-videos-list {
+    flex-direction: column;
+    gap: 18px;
+  }
+  .discover-article-card,
+  .discover-video-card {
+    max-width: 100%;
+    min-width: 0;
+  }
+}
